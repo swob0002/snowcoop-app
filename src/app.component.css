@@ -1,0 +1,27 @@
+/* #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+} */
+
+/* Imports Roberto Font */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roberto', sans-serif; /* Uses imported font */
+}
+
+.el-container {
+    min-height: 100vh;
+}
+
+.el-container > .el-main {
+    padding: 0;
+}
