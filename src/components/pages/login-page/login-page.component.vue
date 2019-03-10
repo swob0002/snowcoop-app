@@ -1,9 +1,4 @@
-<!-- 
-1. Download starter-project.zip and create pages/login-page directory.
-2. Create all the component files accordingly for the login-page.
-3. Add some template code in the login-page.component.vue and login-page.component.js.
--->
-
+<!-- Template Code -->
 <template>
     <div id="loginPage">
         <!-- Add the sign-in box -->

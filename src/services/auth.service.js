@@ -2,8 +2,8 @@
 import Axios from 'axios';
 
 const AuthService = {
-    async login(credentials) {
-        return await Axios.post('https://localhost:3000/auth/login', credentials)
+    login(credentials) {
+        return Axios.post('https://localhost:3000/auth/login', credentials)
             .then(response => {
                 if (response.status === 200 || response.status === 201) { // If response has status code of 200 or 201 (successful)
                     const {payload} = response.data; // ... extract payload from response.data
@@ -12,17 +12,17 @@ const AuthService = {
             });
     },
 
-    // (using 'async' to have them work with 'await' in store.js)
+    // REMOVED: (using 'async' to have them work with 'await' in store.js)
     // set header with authorization token to send out all the requests with a token included
-    async setHeader(access_token) {
+    setHeader(access_token) {
         Axios.defaults.headers.common['Authorization'] = access_token;
     },
 
     // sets token and user into localStorage with keywords 'token' and 'user'
-    async storeToken(token) {
+    storeToken(token) {
         localStorage.setItem('token', JSON.stringify(token));
     },
-    async storeUser(user) {
+    storeUser(user) {
         localStorage.setItem('user', JSON.stringify(user));
     },
 };

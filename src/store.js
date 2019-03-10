@@ -5,13 +5,21 @@ import AuthService from './services/auth.service';
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-    // created state
+    // created state (data to store a value globally; treat as global variable with particular manners to call an manipulate)
     state: {
         token: null,
         user: null,
     },
-    getters: {},
-    // created mutations
+    // created getters (methods allowing Vue components to access state members globally)
+    getters: {
+        USER: state => {
+          return state.user;
+        },
+        IS_LOGIN: state => {
+          return !!state.token;
+        }
+      },
+    // created mutations (setters which can set state members' values; setters are created to encapsulate value setting logics)
     mutations: {
         SET_TOKEN: (state, payload) => {
             state.token = payload;
@@ -20,16 +28,19 @@ const store = new Vuex.Store({
             state.user = payload;
         }
     },
-    actions: {
+    actions: { // actions execute logics related to state, and commit to mutations to store the values
         // define an action LOG_IN to be used in other Vue components and centralize the state
-        LOG_IN: async (context, payload) => { // async means function operates asyncronously, waiting each line to be complete until next line
-            const { user, access_token } = await AuthService.login(payload);
-            await AuthService.storeToken(access_token);
-            await AuthService.setHeader(access_token);
-            await context.commit('SET_IS_LOGIN', access_token);
+        LOG_IN: (context, payload) => { // async means function operates asyncronously, waiting each line to be complete until next line
+            return AuthService.login(payload).then(async (token) => {
+                const { user, access_token } = token;
+                AuthService.storeToken(access_token);
+                AuthService.setHeader(access_token);
+                await context.commit('SET_TOKEN', access_token);
+                AuthService.storeUser(user);
+                await context.commit('SET_USER', user);
+                return user;
+            });
 
-            await AuthService.storeUser(user);
-            await context.commit('SET_USER', user);
         }
     }
 });

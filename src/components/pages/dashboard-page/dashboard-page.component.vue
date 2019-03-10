@@ -1,4 +1,5 @@
-<template>
+<!-- Template Code -->
+template>
     <div id="dashboardPage">
         Dashboard Page
     </div>
