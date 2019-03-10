@@ -6,7 +6,38 @@
 
 <template>
     <div id="loginPage">
-        Login Page
+        <!-- Add the sign-in box -->
+        <div class="sign-in-box-wrapper">
+            <el-card class="sign-in-box">
+                <!-- Containers for each section of the sign-in box -->
+                <div class="form-header-wrapper">
+                    <!-- Adding title -->
+                    <span class="form-title-text">Sign In</span>
+                </div>
+                <div class="form-body-wrapper">
+                    <!-- el-form functional element -->
+                    <el-form :model="formData" ref="formData" @focusout.native="updateIsFormValidated">
+                        <el-form-item :rules="rules.email" prop="email">
+                            <!-- Adding controls - connected to the view with v-model binding -->
+                            <el-input placeholder="Email" v-model="formData.email"></el-input>
+                        </el-form-item>
+                        <el-form-item :rules="rules.password" prop="password">
+                            <el-input placeholder="Password" v-model="formData.password"></el-input>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <div class="form-footer-wrapper">
+                    <!-- Adding controls -->
+                    <div class="text-button-wrapper">
+                        <a>Create account</a>
+                    </div>
+                    <div class="sign-in-button-wrapper">
+                        <!-- Added logics to disable button when form invalid -->
+                        <button v-bind:disabled="!isFormValidated" @click="signIn">Sign In</button>
+                    </div>
+                </div>
+            </el-card>
+        </div>
     </div>
 </template>
 <script src="./login-page.component.js"></script>
