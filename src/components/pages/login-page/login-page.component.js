@@ -26,18 +26,36 @@ export default {
         updateIsFormValidated() { // will execute every time your focus is out on the form control, updating isFormValidated property
             const fields = this.$refs.formData.fields;
             this.isFormValidated = fields.reduce((acc, field) => {
-              let valid = (field.isRequired && field.validateState === 'success');
-              let noError = (!field.isRequired && field.validateState !== 'error');
-              return acc && (valid || noError);
+                let valid = (field.isRequired && field.validateState === 'success');
+                let noError = (!field.isRequired && field.validateState !== 'error');
+                return acc && (valid || noError);
             }, true);
-          },
-          signIn() { // will be executed when button is enabled and clicked to dispatch an action
+        },
+        signIn() { // will be executed when button is enabled and clicked to dispatch an action
             if (this.isFormValidated) {
-              this.$store.dispatch('LOG_IN', {
-                  email: this.formData.email,
-                  password: this.formData.password
-              });
+                const credentials = {
+                    email: this.formData.email,
+                    password: this.formData.password
+                };
+                this.$store.dispatch('LOG_IN', credentials).then (
+                    (user) => this.onLoginSuccessful(user),
+                    (error) => this.onLoginFailed(error)
+                );
             }
-          }
+        },
+        // passing user as a payload from the action
+        // check if user is an empty object
+        // if empty object, throw error
+        // if not empty object, redirect user to dashboard page, this.$router.push('dashboard');
+        onLoginSuccessful(user) {
+            if (!user) {
+                throw new Error('Something went wrong!');
+            }
+            this.$router.push('dashboard');
+        },
+        onLoginFailed(error) {
+            /*eslint-disable*/
+            console.error(error);
+        },
     }
 }; // end export default

@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router';
-// import DashboardPage from './components/pages/dashboard-page/dashboard-page.component.vue';
-// import ListPage from './components/pages/list-page/list-page.component.vue';
-import loginPageComponent from './components/pages/login-page/login-page.component.vue';
+import loginPage from './components/pages/login-page/login-page.component.vue';
+import dashboardPage from './components/pages/dashboard-page/dashboard-page.component.vue';
+// import listPage from './components/pages/list-page/list-page.component.vue';
 
 // adding route option object
 const router = new VueRouter({
@@ -12,15 +12,15 @@ const router = new VueRouter({
     },
     {
         path: '/login',
-        component: loginPageComponent
+        component: loginPage
     },
-    // {
-    //     path: '/dashboard',
-    //     component: DashboardPage
-    // },
+    {
+        path: '/dashboard',
+        component: dashboardPage
+    }
     // {
     //     path: '/list',
-    //     component: ListPage
+    //     component: listPage
     // },
   ]
 });

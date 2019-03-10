@@ -1,13 +1,13 @@
-<!-- 5. Add layouts in app.component.vue file -->
-
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <el-container>
-      <el-aside width="200px"></el-aside>
+      <!-- Use computed property isLogin to hide sidebar using v-if attribute -->
+      <el-aside width="228px" v-if="isLogIn"> <!-- or 200px, test -->
+        <side-navigation/> <!-- Adds Side Navigation -->
+      </el-aside>
       <el-main>
-        <!-- Router View -->
-        <router-view></router-view>
+        <router-view></router-view> <!-- Adds Router View -->
       </el-main>
     </el-container>
   </div>

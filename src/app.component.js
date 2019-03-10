@@ -1,10 +1,14 @@
-// import HelloWorld from './components/HelloWorld.vue'
-
 import SideNavigation from './components/side-navigation/side-navigation.component.vue';
 
 export default {
   name: 'app',
   components: {
-      SideNavigation
-  }
+    SideNavigation
+  },
+  computed: {
+    // call to a getter to check if a user is signed in or not
+    isLogIn() {
+      return this.$store.getters.IS_LOGIN
+    }
+  },
 }
