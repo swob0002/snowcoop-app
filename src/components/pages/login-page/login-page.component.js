@@ -2,6 +2,14 @@
 export default {
     name: 'loginPage',
     components: {},
+    directives: {
+        // auto-focusing on email input
+        focus: {
+            inserted: function (el) {
+                el.firstElementChild.focus()
+            }
+        }
+    },
     data () {
         return {
             // Adds formData as a property
@@ -12,11 +20,23 @@ export default {
             // Adds rules for form items on login page
             rules: {
                 email: [
-                    { required: true, message: 'Please input email address', trigger: 'blur' },
-                    { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
+                    { 
+                    required: true,
+                    message: 'Please input email address',
+                    trigger: 'blur'
+                    },
+                    {
+                    type: 'email',
+                    message: 'Please input correct email address',
+                    trigger: ['blur', 'change']
+                    }
                 ],
                 password: [
-                    { required: true, message: 'Please input password', trigger: 'blur' }
+                    {
+                    required: true,
+                    message: 'Please input password',
+                    trigger: 'blur'
+                    }
                 ]
             },
             isFormValidated: false,

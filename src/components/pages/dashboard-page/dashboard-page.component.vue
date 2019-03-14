@@ -1,7 +1,6 @@
-<!-- Template Code -->
-template>
+<template>
     <div id="dashboardPage">
-        Dashboard Page
+        <p class="title">Hi {{firstName}}, Welcome to Snowcoop</p>
     </div>
 </template>
 
