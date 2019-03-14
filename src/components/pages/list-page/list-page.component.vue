@@ -1,6 +1,6 @@
 <template>
     <div id="listPage">
-        List Page
+        <p class="title">Address List</p>
     </div>
 </template>
 

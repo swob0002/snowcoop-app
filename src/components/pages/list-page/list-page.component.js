@@ -1,4 +1,9 @@
 // Template Code
 export default {
-    name: 'ListPage'
-};
+    name: 'listPage',
+    computed: {
+      isLogIn() {
+        return this.$store.getters.IS_LOGIN
+      }
+    }
+  }

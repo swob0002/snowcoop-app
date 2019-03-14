@@ -1,7 +1,52 @@
+/* to Zeplin specifications */
 #side-navigation {
     height: 100%;
+    width: 228px;
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
 }
 
 .side-nav-menu {
     height: 100%;
+    text-align: center;
+}
+  
+.el-menu-item {
+    width: 228px;
+    height: 84px;
+}
+  
+.el-menu-item:hover {
+    background-color: #a4d4f6;
+}
+  
+.el-menu-item>span {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}  
+.el-menu-item:hover>span {
+    color: #1974e8;
+    background-color: none;
+}
+  
+.logo {  
+    margin-top: 31px;
+    margin-bottom: 35px;
+}
+.logo>span {
+    width: 114px;
+    height: 28px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    color: #969696;
 }
