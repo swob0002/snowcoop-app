@@ -1,6 +1,14 @@
 <template>
     <div id="listPage">
-        <p class="title">Address List</p>
+        <div class="list-wrapper">
+            <div class="map-view-wrapper">
+            <map-view
+                v-if="addressList"
+                v-bind:showList="true"
+                v-bing:addressList="addressList">
+            </map-view>
+            </div>
+        </div>
     </div>
 </template>
 
