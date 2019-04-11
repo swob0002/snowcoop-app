@@ -11,6 +11,8 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 import router from './router'
 import store from './store'
 
+// removes production tip in browser console
+Vue.config.productionTip = false;
 
 // register imported modules to Vue instance
 Vue.use(VueRouter)
@@ -26,8 +28,7 @@ Vue.use(VueGoogleMaps, {
 /* eslint-disable */
 console.log(process.env.VUE_APP_GOOGLE_API_KEY);
 
-// removes production tip in browser console
-Vue.config.productionTip = false;
+
 
 new Vue({
   // reference the router we imported

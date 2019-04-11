@@ -4,7 +4,7 @@
             <div class="map-view-wrapper">
             <map-view
                 v-if="addressList"
-                v-bind:showList="true"
+                v-bind:showList="false"
                 v-bing:addressList="addressList">
             </map-view>
             </div>

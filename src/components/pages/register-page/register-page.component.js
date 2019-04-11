@@ -14,7 +14,7 @@ export default {
             callback(new Error('Please input the password'));
         } else {
         if (this.formData.passwordConfirm !== "") {
-            this.$refs.formData.validateField("passwordConfirm");
+            this.$refs.formData.validateField('passwordConfirm');
         } 
             callback();
         }
