@@ -7,6 +7,7 @@ export default {
   },
   computed: {
     // call to a getter to check if a user is signed in or not
+    /* eslint-disable */
     isLogIn() {
       return this.$store.getters.IS_LOGIN
     }
