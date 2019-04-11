@@ -11,7 +11,6 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 import router from './router'
 import store from './store'
 
-
 // register imported modules to Vue instance
 Vue.use(VueRouter)
 Vue.use(ElementUI)
