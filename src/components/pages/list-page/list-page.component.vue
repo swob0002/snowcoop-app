@@ -1,6 +1,21 @@
 <template>
     <div id="listPage">
-        <p class="title">Address List</p>
+        <div class="list-wrapper">
+            <div class="list-header">  
+                <span class="list-title">
+                    {{ `You have ${addressList.length} address to complete` }}
+                </span> 
+            </div>
+            <div class="list-view-wrapper">
+                <el-card class="map-view-card">  
+                    <map-view
+                        v-if="addressList"
+                        v-bind:showList="true"
+                        v-bind:addressList="addressList">
+                    </map-view>
+                </el-card>
+            </div>
+        </div>
     </div>
 </template>
 

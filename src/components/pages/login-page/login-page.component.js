@@ -71,7 +71,7 @@ export default {
             if (!user) {
                 throw new Error('Something went wrong!');
             }
-            this.$router.push('dashboard');
+            this.$router.push('/dashboard');
         },
         onLoginFailed(error) {
             /*eslint-disable*/

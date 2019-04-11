@@ -1,0 +1,36 @@
+#mapView{
+    height: 100%;
+    width: 100%;
+}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0c891d5d0029c6731088d038c4e8e19b3d0a1edf
+.map-view-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.map-wrapper {
+    width: 100%;
+}
+
+.address-list-wrapper {
+    min-width: fit-content;
+    overflow-y: scroll;
+}
+<<<<<<< HEAD
+
+.address-item {
+    padding: 8px 10px;
+=======
+.address-item{
+    padding: 8px 10px;  
+>>>>>>> 0c891d5d0029c6731088d038c4e8e19b3d0a1edf
+    cursor: pointer;
+}
+
+.address-item:hover, .current-place {
+    background-color: #a4d4f6;
+    color: white;
+}
