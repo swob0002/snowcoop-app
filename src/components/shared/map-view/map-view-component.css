@@ -2,7 +2,10 @@
     height: 100%;
     width: 100%;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0c891d5d0029c6731088d038c4e8e19b3d0a1edf
 .map-view-wrapper {
     display: flex;
     flex-direction: row;
@@ -16,9 +19,14 @@
     min-width: fit-content;
     overflow-y: scroll;
 }
+<<<<<<< HEAD
 
 .address-item {
     padding: 8px 10px;
+=======
+.address-item{
+    padding: 8px 10px;  
+>>>>>>> 0c891d5d0029c6731088d038c4e8e19b3d0a1edf
     cursor: pointer;
 }
 

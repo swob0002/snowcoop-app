@@ -15,31 +15,35 @@ export default {
   },
   computed: {
     google: gmapApi,
-    zoomValue() {
-      return this.currentPlace ? 18 : 14;
+    zoomValue () {
+      return this.currentPlace ? 18 : 7
     }
   },
   mounted () {
-    this.initPlaces();
+    this.initPlaces()
   },
   methods: {
     initPlaces () {
-      // console.log(this.addressList);
-      this.markers = this.addressList.map(address => this.buildMarker(address));
-      this.center = this.markers[0].position
+      this.markers = this.addressList.map(address => this.buildMarker(address))  
+      //   const marker = {
+      //     lat: address.lat,
+      //     lng: address.lng
+      //   }
+      //   return { position: marker }
+      // })
 
+      this.center = this.markers[0].position
     },
-    setLocation(address) {
-      this.center = this.buildMarker(address).position;
-      this.currentPlace = address;
+    setLocation (address) {
+      this.center = this.buildMarker(address).position
+      this.currentPlace = address
     },
-    
-    buildMarker(address) {
+    buildMarker (address) {
       const marker = {
         lat: address.lat,
         lng: address.lng
       }
-      return { position:marker };
+      return { position: marker }
     }
   }
 }
