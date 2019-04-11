@@ -19,7 +19,7 @@ export default {
       addressList: null
     }
   },
-  mounted() {
+  mounted () {
     /* eslint-disable */
     console.log('mounted...');
     this.$store.dispatch('GET_ADDRESS_LIST').then(addressList => {
