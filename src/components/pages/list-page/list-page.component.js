@@ -1,14 +1,4 @@
-// Template Code
-// export default {
-//     name: 'listPage',
-//     computed: {
-//       isLogIn() {
-//         return this.$store.getters.IS_LOGIN
-//       }
-//     }
-//   }
-
-import mapView from '../../shared/map-view/map-view-component.vue';
+import mapView from '../../shared/map-view/map-view.component.vue';
 export default {
   name: 'listPage',
   components: {
@@ -20,9 +10,8 @@ export default {
     }
   },
   mounted () {
-    /* eslint-disable */
-    console.log('mounted...');
     this.$store.dispatch('GET_ADDRESS_LIST').then(addressList => {
+      /* eslint-disable */ 
       console.log(addressList);
       this.addressList = addressList
     })
