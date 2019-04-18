@@ -25,13 +25,6 @@ export default {
   methods: {
     initPlaces () {
       this.markers = this.addressList.map(address => this.buildMarker(address))  
-      //   const marker = {
-      //     lat: address.lat,
-      //     lng: address.lng
-      //   }
-      //   return { position: marker }
-      // })
-
       this.center = this.markers[0].position
     },
     setLocation (address) {

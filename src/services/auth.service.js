@@ -27,7 +27,7 @@ const AuthService = {
     
     // set header with authorization token to send out all the requests with a token included
     setHeader(access_token) {
-        Axios.defaults.headers.common['Authorization'] = access_token
+        Axios.defaults.headers.common["Authorization"] = `bearer ${access_token}`
     },
 
     // sets token and user into localStorage with keywords 'token' and 'user'
