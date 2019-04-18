@@ -2,7 +2,7 @@
     <div id="listPage">
         <div class="list-wrapper">
             <div class="list-header">  
-                <span class="list-title">
+                <span class="list-title" v-if="addressList">
                     {{ `You have ${addressList.length} address to complete` }}
                 </span> 
             </div>
