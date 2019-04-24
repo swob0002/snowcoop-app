@@ -1,4 +1,3 @@
-// Template Code
 export default {
     name: 'loginPage',
     components: {},
@@ -42,6 +41,11 @@ export default {
             isFormValidated: false,
         }; // end return
     }, // end data
+    mounted() {
+        if (this.$store.getters.IS_LOGIN) {
+          this.$router.push("dashboard");
+        }
+    },
     methods: {
         updateIsFormValidated() { // will execute every time your focus is out on the form control, updating isFormValidated property
             const fields = this.$refs.formData.fields;

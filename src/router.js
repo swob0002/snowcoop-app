@@ -3,10 +3,8 @@ import loginPage from './components/pages/login-page/login-page.component.vue'
 import dashboardPage from './components/pages/dashboard-page/dashboard-page.component.vue'
 import registerPage from './components/pages/register-page/register-page.component.vue'
 import listPage from './components/pages/list-page/list-page.component.vue'
-// extra
-// import sideNavigation from './components/side-navigation/side-navigation.component.vue'
 
-// adding route option object
+// adding route option objects
 const router = new VueRouter({
   routes: [
     { 
@@ -35,11 +33,6 @@ const router = new VueRouter({
             requiresAuth: true
         }
     }
-    // ,
-    // {
-    //     path: '/sideNavigation',
-    //     component: sideNavigation
-    // }
   ]
 })
 

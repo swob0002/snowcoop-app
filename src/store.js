@@ -1,8 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import AuthService from './services/auth.service'
-import AddressService from "./services/address.service"
-// import Axios from 'axios'
+import Vue from "vue";
+import Vuex from "vuex";
+import AuthService from "./services/auth.service";
+import AddressService from "./services/address.service";
 
 Vue.use(Vuex)
 
@@ -22,8 +21,10 @@ const store = new Vuex.Store({
     },
     IS_LOGIN: state => {
       if (state.token) {
-        // const parsedToken = JSON.parse(state.token) -- DELETED
+        /* eslint-disable */
+        // const parsedToken = JSON.parse(state.token)
         AuthService.setHeader(state.token)
+        // AuthService.setHeader(parsedToken)
       } else {
         Vue.router.push("login")
       }
@@ -78,10 +79,8 @@ const store = new Vuex.Store({
     },
     GET_ADDRESS_LIST: context => {
       return AddressService.getAddressList().then(async payload => {
-        await context.commit("SET_ADDRESS_LIST", payload)
-        /* eslint-disable */
-        console.log('ssss');
-        return payload
+        await context.commit("SET_ADDRESS_LIST", payload);
+        return payload;
       })
     },
     ADD_ADDRESS: (context, payload) => {
