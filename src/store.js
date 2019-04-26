@@ -19,6 +19,7 @@ const store = new Vuex.Store({
     USER: state => {
       return state.user
     },
+    //adding a token to the header whenever token is assigned or returned
     IS_LOGIN: state => {
       if (state.token) {
         /* eslint-disable */
@@ -83,6 +84,7 @@ const store = new Vuex.Store({
         return payload;
       })
     },
+    //Calling state addressList and adding the result of the POST request and setting the state again.
     ADD_ADDRESS: (context, payload) => {
       return AddressService.addAddress(payload).then(async payload => {
         const addressList = context.state.addressList;

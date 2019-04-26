@@ -5,6 +5,7 @@
                 <span class="list-title" v-if="addressList">
                     {{ `You have ${addressList.length} addresses to complete` }}
                 </span>
+                <!-- Form wired into list page component -->
                 <div class="list-header-button-wrapper">
                     <button @click.prevent="showForm()">Add</button>
                 </div>

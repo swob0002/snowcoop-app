@@ -9,6 +9,7 @@
             <span>
                 <div class="form-body-wrapper">
                     <el-form :model="formData" ref="formData" @focusout.native="updateIsFormValidated">
+                        <!-- Adding Google Maps API Autocomplete -->
                         <el-form-item>
                             <gmap-autocomplete
                                 class="el-input__inner"

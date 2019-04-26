@@ -11,10 +11,7 @@
         <el-menu-item index="/list">
             <!-- <i class="el-icon-document"></i> -->
             <span>Address List</span>
-        </el-menu-item>
-         <el-menu-item index="/map">
-            <span>Location Map</span>
-        </el-menu-item>       
+        </el-menu-item>    
     </el-menu>
 </div>
 </template>

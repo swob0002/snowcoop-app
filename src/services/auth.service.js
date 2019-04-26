@@ -22,8 +22,6 @@ const AuthService = {
             }
         )
     },
-
-    // REMOVED: (using 'async' to have them work with 'await' in store.js)
     
     // set header with authorization token to send out all the requests with a token included
     setHeader(access_token) {

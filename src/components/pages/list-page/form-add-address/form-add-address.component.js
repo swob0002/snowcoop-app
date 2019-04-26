@@ -51,6 +51,7 @@ export default {
                     )
             }
         },
+        //form toggle method
         toggleForm(showForm) {
             this.showForm = showForm
         },
